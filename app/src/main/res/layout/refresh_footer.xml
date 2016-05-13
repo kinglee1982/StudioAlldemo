@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/pull_to_refresh_header"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:background="#8CC1BB"
+    android:gravity="center" >
+
+	<TextView
+        android:id="@+id/pull_to_load_text"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:textColor="#808080"
+        android:text="@string/refresh_foottext"
+        android:textStyle="bold" />
+    
+    <LinearLayout 
+        android:id="@+id/pull_to_refresh_ll_footer" 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        >
+        <com.app.alldemo.courview.WaitingImageView
+            android:id="@+id/pull_to_refresh_waiting_footer" 
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/waiting"
+            />
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/gray"
+            android:text="@string/refresh_footlading"
+            android:layout_gravity="center_vertical"
+            />
+        </LinearLayout>
+</RelativeLayout>

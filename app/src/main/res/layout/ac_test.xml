@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+        <com.aigestudio.wheelpicker.view.WheelPicker
+            android:id="@+id/main_wheel_picker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#fc724c"
+            android:padding="12dp"
+            app:wheel_text_color="#FFF" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/straight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="直向" />
+
+        <Button
+            android:id="@+id/content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="当前显示" />
+
+        <Button
+            android:id="@+id/curved"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="弯曲" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/main_btn_year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="年的弹出框" />
+
+        <Button
+            android:id="@+id/main_btn_month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="月的弹出框" />
+
+        <Button
+            android:id="@+id/main_btn_day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="天的弹出框" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/main_btn_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="日期的弹出框" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/main_btn_zodiac"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="生肖的弹出框" />
+        <Button
+            android:id="@+id/main_btn_constellation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="星座的弹出框" />
+    </LinearLayout>
+</LinearLayout>

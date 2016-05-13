@@ -1,0 +1,28 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.app.alldemo.effect.list.RefreshListActivity">
+
+    <com.app.alldemo.courview.list.PullToRefreshLayout
+        android:id="@+id/refresh_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include layout="@layout/refresh_top" />
+
+        <com.app.alldemo.courview.list.PullableGridView
+            android:id="@+id/list_test"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:columnWidth="90dp"
+            android:horizontalSpacing="5dp"
+            android:numColumns="auto_fit"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="5dp"
+            />
+
+        <include layout="@layout/load_more" />
+    </com.app.alldemo.courview.list.PullToRefreshLayout>
+
+</RelativeLayout>

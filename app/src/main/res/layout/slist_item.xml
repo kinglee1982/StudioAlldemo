@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/name1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="sss"
+        android:layout_margin="20dp" />
+
+    <com.app.alldemo.courview.list.WrapperGridView
+        android:id="@+id/gridviewtest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:horizontalSpacing="3dp"
+        android:verticalSpacing="3dp"
+        android:numColumns="3"
+        android:scrollbars="none" 
+        />
+    <TextView
+        android:id="@+id/name2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="sss"
+        android:layout_margin="20dp" />
+</LinearLayout>

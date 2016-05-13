@@ -1,0 +1,26 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.app.alldemo.effect.uiset.EditSetActivity">
+    <com.app.alldemo.courview.SoftLayoutView
+        android:id="@+id/softlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="我们测试"
+            android:gravity="center"
+            />
+        <EditText
+            android:id="@+id/editext"
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
+    </com.app.alldemo.courview.SoftLayoutView>
+
+</RelativeLayout>

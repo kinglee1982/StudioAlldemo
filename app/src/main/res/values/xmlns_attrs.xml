@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--自定义属性:com.app.alldemo.effect.uiset.XmlnsActivity-->
+<resources>
+    <declare-styleable name="XmlnsAttrs">
+        <attr name="xmlns_name" format="string" />
+        <attr name="xmlns_boolean" format="boolean" />
+    </declare-styleable>
+</resources>

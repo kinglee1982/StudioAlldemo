@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.app.alldemo"
+    android:installLocation="auto"
+    >
+
+    <!-- 访问internet权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 添加桌面快捷方式 -->
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"></uses-permission>
+    <uses-permission android:name="android.permission.VIBRATE"></uses-permission>
+    <!-- 在SDCard中创建与删除文件权限 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <!-- 在SD卡写入数据权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 电话 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- wifi -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- GCM -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <!-- VERY IMPORTANT! Don't forget this permission, or in-app billing won't work. -->
+    <uses-permission android:name="com.android.vending.BILLING" />
+    <!-- 仿360浮动插件需要的权限 -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="com.android.vending.BILLING" />
+    <application
+        android:name=".AlldemoApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".EffectActivity" />
+        <activity android:name=".effect.TimerActivity" />
+        <activity android:name=".effect.SysSetActivity" />
+        <activity android:name=".effect.uiset.EditSetActivity"/>
+        <activity android:name=".effect.uiset.SoftEditActivity"/>
+        <activity android:name=".effect.uiset.LeverActivity"/>
+        <activity android:name=".effect.uiset.TransparencyActivity"/>
+        <activity android:name=".effect.uiset.RelaySetActivity"/>
+        <activity android:name=".effect.uiset.ShapActivity"/>
+        <activity android:name=".effect.uiset.TextSetActivity"/>
+        <activity android:name=".effect.uiset.XmlnsActivity"/>
+        <activity android:name=".effect.uiset.ViewActivity"/>
+        <activity android:name=".effect.uiset.OperatorActivity"/>
+        <activity android:name=".effect.uiset.HexadecimalActivity"/>
+        <activity android:name=".effect.uiset.EditHintActivity"/>
+        <activity android:name=".effect.DrawTestActivity"/>
+        <activity android:name=".effect.SearchFlyActivity"/>
+        <activity android:name=".effect.CircularmenuActivity"/>
+        <activity android:name=".effect.ViewTreeObserverActivity"/>
+        <activity android:name=".effect.TuneWheelActivity"/>
+        <activity android:name=".effect.WheelActivity"/>
+        <activity android:name=".effect.wheel.WheelActivity1"/>
+        <activity android:name=".effect.wheel.WheelActivity2"/>
+        <activity android:name=".effect.wheel.WheelActivity3"/>
+        <activity android:name=".effect.wheel.WheelActivity4"/>
+        <activity android:name=".effect.wheel.WheelActivity5"/>
+        <activity android:name=".effect.wheel.WheelActivity6"/>
+        <activity android:name=".effect.ViewGridActivity"/>
+        <activity android:name=".effect.viewgrid.HscrollorActivity"/>
+        <activity android:name=".effect.ImageUtilsActivity"/>
+        <activity android:name=".effect.viewgrid.ViewpageTestActivity"/>
+        <activity android:name=".effect.viewgrid.RcycleViewpageActivity"/>
+        <activity android:name=".effect.viewgrid.AddViewpageHeardActivity"/>
+        <activity android:name=".effect.viewgrid.GridViewEmptyActivity"/>
+        <activity android:name=".effect.viewgrid.GridMoreActivity"/>
+        <activity android:name=".adapter.SlidScrollActivity"/>
+        <activity android:name=".effect.viewgrid.DynViewpageActivity"/>
+        <activity android:name=".effect.DialogActivity"/>
+        <activity android:name=".effect.PhtoActivity"/>
+        <activity android:name=".effect.phto.CutTangularImagActivity"/>
+        <activity android:name=".effect.phto.CutCicleImagActivity"/>
+        <activity android:name=".effect.phto.CutTangularImagActivity2"/>
+        <activity android:name=".effect.phto.CutTangularImagActivity3"/>
+        <activity android:name=".effect.phto.CutCicleImagActivity2"/>
+        <activity android:name=".effect.phto.ChooseAlbumActivity"/>
+        <activity android:name=".effect.phto.ChooseImagesActivity"/>
+        <activity android:name=".effect.phto.ChoosePhtoActivity"/>
+        <activity android:name=".effect.phto.CutRateImageActivity"/>
+        <activity android:name=".effect.phto.ChooseImagesAct"/>
+        <activity android:name=".effect.phto.ChoosePhotosTestActivity"/>
+        <activity android:name=".effect.phto.ChoosePhotosActivity"/>
+        <activity android:name=".effect.SlidMenuActivity"/>
+        <activity android:name=".effect.SearchBoxActivity"/>
+        <activity android:name=".effect.MyVideoActivity"/>
+        <activity android:name=".effect.PopuActivity"/>
+        <activity android:name=".effect.EditextIncoActivity"/>
+        <activity android:name=".effect.TextViewIncoActivity"/>
+        <activity android:name=".effect.LineayLineActivity"/>
+        <activity android:name=".effect.LineayLineActivity2"/>
+        <activity android:name=".effect.DynLineayLayoutActivity"/>
+        <activity android:name=".effect.SeekBarActivity"/>
+        <activity android:name=".effect.CircleBakActivity"/>
+        <activity android:name=".effect.seekbar.DefaultSeekBarActivity"/>
+        <activity android:name=".effect.seekbar.VerticalSeekBarActivity"/>
+        <activity android:name=".effect.seekbar.CircleBarBarTestActivity"/>
+        <activity android:name=".effect.seekbar.ProgressWheelActivity"/>
+        <activity android:name=".effect.seekbar.MyProgressActivity"/>
+        <activity android:name=".effect.seekbar.MyVerSeekBarActivity"/>
+        <activity android:name=".effect.seekbar.SeekBarTestActivity"/>
+        <activity android:name=".effect.seekbar.DigitalBarActivity"/>
+        <activity android:name=".effect.seekbar.AnminBarActivity"/>
+        <activity android:name=".effect.seekbar.CircularProgressActivity"/>
+        <activity android:name=".effect.AcActivity" />
+        <activity android:name=".effect.PasswordActivity"
+            android:windowSoftInputMode="stateAlwaysVisible"
+            />
+        <activity android:name=".effect.SwitchActivity" />
+        <activity android:name=".effect.AutoCompleteTextViewActivity" />
+        <activity android:name=".effect.VolleyActivityTest" />
+        <activity android:name=".effect.ImagColorMatrixActivity" />
+        <activity android:name=".effect.ImagMatrixActivity" />
+        <activity android:name=".effect.MatrixTestActivity" />
+        <activity android:name=".effect.CStatueActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoTitleBar1"
+            />
+        <activity android:name=".effect.StatueHeightActivity" />
+        <activity android:name=".effect.GildActivity" />
+        <activity android:name=".effect.ListViewTestActivity" />
+        <activity android:name=".effect.list.RefreshListActivity" />
+        <activity android:name=".effect.list.RefreshGridActivity" />
+        <activity android:name=".effect.list.RefreshActivity"/>
+        <activity android:name=".effect.list.RefreshScrolloListViewActivity" />
+        <activity android:name=".effect.list.DragListActivity"/>
+        <activity android:name=".effect.list.SortListViewMainActivity"/>
+        <activity android:name=".effect.list.ListViewTitleActivity"/>
+        <activity android:name=".effect.list.ListLetterActivity"/>
+        <activity android:name=".effect.list.SlideMainActivity"/>
+        <activity android:name=".effect.list.SwipMainActivity"/>
+        <activity android:name=".effect.list.SimpleTestActivity"/>
+        <activity android:name=".effect.list.SimpleTestActivity2"/>
+        <activity android:name=".effect.list.SimpleActivity"/>
+        <activity android:name=".effect.list.DifferentMenuActivity"/>
+        <activity android:name=".effect.list.TofloatlistActivity"/>
+        <activity android:name=".effect.list.SrollListActivity"/>
+        <activity android:name=".effect.list.DeleteLeftMainActivity"/>
+        <activity android:name=".effect.list.LetterSequenceActivity"/>
+        <activity android:name=".effect.list.ScoloListView"/>
+        <activity android:name=".effect.list.ViewHodleTestActivity"/>
+        <activity android:name=".effect.list.SListViewActivity"/>
+        <activity android:name=".effect.list.SListViewTestActivity"/>
+        <activity android:name=".effect.list.SGridviewActivity"/>
+        <activity android:name=".effect.list.ListGridActivity"/>
+        <activity android:name=".effect.list.QQFriendsActivity"/>
+        <activity android:name=".effect.list.SGridviewActivity3"/>
+        <activity android:name=".effect.list.ListViewSectionActivity"/>
+        <activity android:name=".effect.list.ListJuBuActivity"/>
+
+        <activity android:name=".FuctionActivity"/>
+        <activity android:name=".function.DownloadActivity"/>
+        <activity android:name=".function.DownloadListActivity"/>
+        <activity android:name=".function.ImagLoadActivity"/>
+        <activity android:name=".function.FontActivity"/>
+
+        <activity android:name=".AnimationTestActivity"/>
+        <activity android:name=".animat.Rate3DActivity"/>
+        <activity android:name=".animat.AnimationDescriptActivity"/>
+        <activity android:name=".animat.OtherAnimatActivity"/>
+        <activity android:name=".animat.AnimationEffectActiivty"/>
+        <activity android:name=".animat.PlumAnmationActivity"/>
+        <activity android:name=".animat.effect.AppGardActivity"/>
+
+        <activity android:name=".LibraryActivity"/>
+    </application>
+
+</manifest>

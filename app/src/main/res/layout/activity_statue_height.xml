@@ -1,0 +1,15 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	>
+	<TextView
+		android:id="@+id/statue_height"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:gravity="center"
+		android:layout_margin="50dp"
+		android:textSize="30sp"
+		android:text="sss"
+		/>
+</LinearLayout>

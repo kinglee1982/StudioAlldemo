@@ -1,0 +1,29 @@
+<resources>
+
+    <color name="black_overlay">#66000000</color>
+    <color name="line">#ff6f00</color>
+    <color name="search_select_title">#e46200</color>
+    <color name="search_noselect_title">#505050</color>
+    <color name="dimgrey">#696969</color>
+    <color name="gray">#808080</color>
+    <color name="floralwhite">#FFFAF0</color>
+    <color name="letter_indicator_background">#19000000</color>
+    <color name="letter_indicator_text_normal">#FF888888</color>
+    <color name="letter_indicator_text_select">#FF1BCB87</color>
+    <color name="red">#FFC93437</color>
+    <color name="blue">#FF375BF1</color>
+    <color name="yellow">#FFF7D23E</color>
+    <color name="green">#FF34A350</color>
+    <color name="ksw_md_ripple_normal">#1E000000</color>
+    <color name="ksw_md_ripple_checked">#33019285</color>
+
+    <color name="ksw_md_solid_shadow">#33000000</color>
+
+    <color name="ksw_md_solid_normal">#ECECEC</color>
+    <color name="ksw_md_solid_checked">#019285</color>
+    <color name="ksw_md_solid_disable">#FFFFFF</color>
+    <color name="ksw_md_solid_checked_disable">#aaaaaa</color>
+    <color name="pink">#F55677</color>
+    <color name="black">#000000</color>
+    <color name="tw__transparent">#00000000</color>
+</resources>

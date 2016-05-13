@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <com.app.alldemo.courview.seekbar.ProgressWheel
+        xmlns:ProgressWheel="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/progressBar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        ProgressWheel:barColor="#C8101C"
+        ProgressWheel:barLength="20dp"
+        ProgressWheel:barWidth="2dp"
+        ProgressWheel:rimColor="#969696"
+        ProgressWheel:rimWidth="2dp"
+        ProgressWheel:spinSpeed="3dp"
+        ProgressWheel:textColor="#222222"
+        ProgressWheel:textSize="14sp" />
+
+</RelativeLayout>

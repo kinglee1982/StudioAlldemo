@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <!-- 说明：#ff000000 此为16进制颜色代码，前2位ff为透明度，后6位为颜色值（000000为黑色，ffffff为白色，可以用ps等软件获取）。 -->
+    <!-- 透明度分为256阶（0-255），计算机上用16进制表示为（00-ff）。完全透明就是0阶，完全不透明就是255阶,如果50%透明就是127阶（256的一半当然是128，但因为是从0开始，所以实际上是127）。 -->
+    <!-- 10进制的255换算成16进制是ff,127换算成16进制是7f -->
+    <!-- 25%透明的一种红色 -->
+    <!-- 0xFF999999;0x表示16进制;FF:代表透明度;999999:rgb颜色值-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="sssssssss"
+        android:gravity="center"
+        android:background="#3ff70000"
+        />
+    <!-- 50%透明的一种黑色 -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="sssssssss"
+        android:gravity="center"
+        android:background="#7f000000"
+        />
+</LinearLayout>

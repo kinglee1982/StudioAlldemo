@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval"
+    >
+    <!-- rectagle矩形，oval椭圆，line水平直线，ring环形-->
+    <item android:id="@android:id/background">
+        <shape>
+            <!-- 填充-->
+            <padding
+                android:top="10dp"
+                android:left="10dp"
+                />
+            <!-- 背景 -->
+    		<solid android:color="#FF55ee" />
+    		<!-- 边角：设置圆角大小 -->
+            <corners
+                android:bottomLeftRadius="5dp"
+                android:bottomRightRadius="5dp"
+                android:radius="5dip"
+                android:topLeftRadius="5dp"
+                android:topRightRadius="5dp" />
+            <!-- 边框色 ,描边:width线宽;dashGap:"-"之间的距离;dashWidth:"-"横线的宽度-->
+            <stroke android:color="#a65998" 
+                	android:width="5dp"
+                    android:dashWidth="10dp"
+                    android:dashGap="5dp"
+                />
+            <!-- 渐变 -->
+            <!-- 渐变的样式 liner线性渐变 radial环形渐变 sweep-->
+            <gradient
+                android:angle="270"
+                android:centerColor="#FFFFFF"
+                android:centerY="0.75"
+                android:endColor="#FFFFFF"
+                android:startColor="#FFFFFF"
+                android:type="sweep"
+                />
+        </shape>
+    </item>
+</layer-list>

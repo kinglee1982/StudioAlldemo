@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#ff00ff"
+        android:orientation="horizontal" >
+    </RelativeLayout>
+
+    <com.app.alldemo.courview.WordWrapView
+        android:id="@+id/top_lineay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="60dp"
+        android:background="#00ff00"
+        android:orientation="horizontal" >
+    </com.app.alldemo.courview.WordWrapView>
+
+</LinearLayout>

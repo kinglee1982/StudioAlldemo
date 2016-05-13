@@ -1,0 +1,267 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <!-- -->
+            <LinearLayout
+                android:id="@+id/colorMatrix_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="颜色矩阵ColorMatrix"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="原图" />
+
+                    <ImageView
+                        android:id="@+id/image1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/face1" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/rimag_button"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="改变rgb值后的图片" />
+
+                    <ImageView
+                        android:id="@+id/rimag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <Button
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="rgb值一样的图片" />
+
+                    <ImageView
+                        android:id="@+id/image2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/face3" />
+                </LinearLayout>
+
+
+                <ImageView
+                    android:id="@+id/yimag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="原图" />
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="120dp"
+                        android:src="@drawable/bg2" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/bright_button"
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:text="亮色" />
+
+                        <ImageView
+                            android:id="@+id/bright_image"
+                            android:layout_width="100dp"
+                            android:layout_height="120dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/dark_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="暗色" />
+
+                        <ImageView
+                            android:id="@+id/dark_image"
+                            android:layout_width="100dp"
+                            android:layout_height="120dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/contrast_button"
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:text="高对比度" />
+
+                        <ImageView
+                            android:id="@+id/contrast_image"
+                            android:layout_width="80dp"
+                            android:layout_height="100dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/low_contrast_button"
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:text="低对比度" />
+
+                        <ImageView
+                            android:id="@+id/low_contrast_image"
+                            android:layout_width="80dp"
+                            android:layout_height="100dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/hight_saturated_button"
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:text="高饱和度" />
+
+                        <ImageView
+                            android:id="@+id/hight_saturated_image"
+                            android:layout_width="80dp"
+                            android:layout_height="100dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/low_saturated_button"
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:text="低饱和度" />
+
+                        <ImageView
+                            android:id="@+id/low_saturated_image"
+                            android:layout_width="80dp"
+                            android:layout_height="100dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/red_hue_button"
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:text="红色色相变化" />
+
+                        <ImageView
+                            android:id="@+id/red_hue_image"
+                            android:layout_width="80dp"
+                            android:layout_height="100dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/green_hue_button"
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:text="绿色色相变化" />
+
+                        <ImageView
+                            android:id="@+id/green_hue_image"
+                            android:layout_width="80dp"
+                            android:layout_height="100dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

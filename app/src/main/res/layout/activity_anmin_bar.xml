@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/editext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="刷新" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
+        >
+
+        <ProgressBar
+            android:id="@+id/preogress"
+            style="@style/MyProgressBarHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="60dp"
+            android:max="100"
+            android:progress="0" />
+
+        <RelativeLayout
+            android:id="@+id/tv_relay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            >
+
+            <ImageView
+                android:id="@+id/imageview"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="25dp"
+                android:src="@drawable/face1" />
+
+            <TextView
+                android:id="@+id/tv_num"
+                android:layout_width="40dp"
+                android:layout_height="20dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="36dp"
+                android:background="@drawable/per_bg"
+                android:gravity="center"
+                android:text="43%"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</LinearLayout>

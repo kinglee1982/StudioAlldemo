@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    >
+    <se.emilsjolander.stickylistheaders.StickyListHeadersListView
+        android:id="@+id/lv_data"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:cacheColorHint="@android:color/transparent"
+        android:clipToPadding="false"
+        android:drawSelectorOnTop="true"
+        android:background="@android:color/white"
+        android:fastScrollEnabled="false"
+        android:scrollbarStyle="outsideOverlay"
+        />
+    <TextView
+        android:id="@+id/tv_no_results"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:background="@android:color/white"
+        android:text="没有结果"
+        android:textSize="20sp"
+        android:visibility="gone" />
+</LinearLayout>

@@ -1,0 +1,25 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFC1E0"
+    >
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <!-- 自定义和系统一样效果(图片) -->
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:progressDrawable="@drawable/seek_default_bar"
+        android:thumb="@drawable/bar_thumb"
+        />
+    <!-- 自定义和系统一样效果(自定义背景图片) -->
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:progressDrawable="@drawable/seek_color_bar"
+        android:thumb="@drawable/bar_thumb"
+        />
+</LinearLayout>

@@ -1,0 +1,59 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical" >
+	<LinearLayout
+		android:id="@+id/lineay_layout"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_above="@+id/comment_layout"
+		android:layout_below="@+id/button"
+		android:orientation="vertical" >
+
+		<ListView
+			android:id="@+id/friends_list"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:cacheColorHint="#00000000"
+			android:divider="@android:color/darker_gray"
+			android:dividerHeight="1dp"
+			android:fadingEdge="none"
+			android:listSelector="#00000000" />
+	</LinearLayout>
+
+	<RelativeLayout
+		android:id="@+id/comment_layout"
+		android:layout_width="match_parent"
+		android:layout_height="50dp"
+		android:layout_alignParentBottom="true"
+		android:visibility="gone"
+		>
+
+		<TextView
+			android:id="@+id/send_comment_text"
+			android:layout_width="wrap_content"
+			android:layout_height="40dp"
+			android:layout_alignParentRight="true"
+			android:layout_centerVertical="true"
+			android:layout_marginRight="10dp"
+			android:background="@drawable/greenall_circle_rec"
+			android:gravity="center"
+			android:paddingLeft="20dp"
+			android:paddingRight="20dp"
+			android:text="发送"
+			android:textColor="#ffffff" />
+
+		<EditText
+			android:id="@+id/comment_edit"
+			android:layout_width="match_parent"
+			android:layout_height="40dp"
+			android:layout_alignParentLeft="true"
+			android:layout_centerVertical="true"
+			android:layout_marginLeft="5dp"
+			android:layout_marginRight="10dp"
+			android:layout_toLeftOf="@+id/send_comment_text"
+			android:background="@drawable/write_rectang"
+			android:paddingLeft="10dp" />
+	</RelativeLayout>
+
+</RelativeLayout>

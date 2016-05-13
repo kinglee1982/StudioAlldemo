@@ -1,0 +1,9 @@
+git status
+git add .
+git push 本地提交到服务器
+git pull 服务器更新到本地
+git commit 提交到本地
+git commit -m "描述"
+git commit -am ""
+删除目录
+git rm --cache \*/bin/\*

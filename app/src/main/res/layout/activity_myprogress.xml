@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <!-- 系统自带的水平样式 -->
+
+    <ProgressBar
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_margin="20dp"
+        android:progress="20" />
+    <!-- 自定义的水平样式 -->
+
+    <ProgressBar
+        style="@style/MyProgressBarHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_margin="20dp"
+        android:progress="20" />
+    <com.app.alldemo.courview.seekbar.MyProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+</LinearLayout>

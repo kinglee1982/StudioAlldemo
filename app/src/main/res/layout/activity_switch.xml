@@ -1,0 +1,87 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <com.app.alldemo.courview.switchbuton.SwitchButton
+        android:id="@+id/switchButton_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    <ToggleButton
+        android:id="@+id/toggle_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <Switch
+        android:id="@+id/switch_test"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    <!-- track背景开关-->
+    <Switch
+        android:id="@+id/myswitch_test"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:thumb="@drawable/ios_thumb"
+        android:track="@drawable/ios_back_drawable"
+        android:textOff=""
+        android:textOn=""
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <com.app.alldemo.courview.switchbuton.MySwitchButton
+            android:id="@+id/sb_default"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            />
+
+        <com.app.alldemo.courview.switchbuton.MySwitchButton
+            android:id="@+id/sb_custom_flyme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:kswBackDrawable="@drawable/flyme_back_drawable"
+            app:kswBackMeasureRatio="2.2"
+            app:kswThumbDrawable="@drawable/flyme_thumb_drawable"
+            app:kswThumbHeight="16dp"
+            app:kswThumbWidth="16dp" />
+        <com.app.alldemo.courview.switchbuton.MySwitchButton
+            android:id="@+id/sb_custom_miui"
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:kswBackDrawable="@drawable/miui_back_drawable"
+            app:kswBackMeasureRatio="2"
+            app:kswThumbDrawable="@drawable/miui_thumb_drawable"
+            app:kswThumbHeight="18dp"
+            app:kswThumbWidth="18dp"
+            />
+        <com.app.alldemo.courview.switchbuton.MySwitchButton
+            android:id="@+id/sb_md"
+            style="@style/SwitchButtonStyleMD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <com.app.alldemo.courview.switchbuton.MySwitchButton
+            android:id="@+id/sb_ios"
+            style="@style/SwitchButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            app:kswAnimationDuration="300"
+            app:kswBackDrawable="@drawable/ios_back_drawable"
+            app:kswBackMeasureRatio="1.4"
+            app:kswThumbDrawable="@drawable/ios_thumb"
+            app:kswThumbMarginBottom="-8dp"
+            app:kswThumbMarginLeft="-5dp"
+            app:kswThumbMarginRight="-5dp"
+            app:kswThumbMarginTop="-2.5dp"/>
+    </LinearLayout>
+
+</LinearLayout>

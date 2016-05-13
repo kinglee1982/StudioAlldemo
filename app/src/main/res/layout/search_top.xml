@@ -1,0 +1,74 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/rl_search_box"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="-1.5dp"
+        android:background="@drawable/c1_mp_lable" >
+
+        <LinearLayout
+            android:id="@+id/ll_search_one"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/search_et_bg"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="visible" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/mp_icon_search02" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:hint="搜索" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_search_two"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:visibility="gone" >
+
+            <EditText
+                android:id="@+id/et_search"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/search_et_bg"
+                android:drawableLeft="@drawable/mp_icon_search02"
+                android:imeOptions="actionSearch"
+                android:paddingLeft="5dp" />
+
+            <TextView
+                android:id="@+id/btn_cancel"
+                android:layout_width="75dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:paddingRight="0dp"
+                android:text="cancel"
+                android:textColor="@color/back_text_selector"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

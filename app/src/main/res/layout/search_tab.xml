@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:background="#dfdfdf"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/sorlistview_search_bar_icon_normal" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/write20_solid_rec" >
+
+            <ImageView
+                android:id="@+id/search_clear_inco"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/icon_search_del"
+                android:scaleType="center" />
+
+            <EditText
+                android:id="@+id/search_edittext"
+                style="@style/nostyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/search_clear_inco"
+                android:hint="搜索"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:paddingLeft="10dp"
+                android:textColor="#272727"
+                android:textColorHint="#272727" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,78 @@
+<resources>
+    <style name="AppTheme" parent="android:Theme.Holo.Light">
+    </style>
+    <style name="NoTitleBar1" parent="AppTheme">
+        <item name="android:windowNoTitle">true</item>
+        <!-- 沉浸式状态栏-->
+        <item name="android:fitsSystemWindows">true</item>
+        <item name="android:clipToPadding">true</item>
+    </style>
+    <!-- 单独设置字体风格asserts下-->
+    <style name="TextViewCustomFont">
+        <item name="fontPath">fonts/SeuratPro-B.ttf</item>
+    </style>
+    <style name="nostyle">
+        <item name="android:background">@drawable/nostyle</item>
+    </style>
+    <!-- popu_up.layout-->
+    <style name="mypopwindow_anim_style">
+        <!-- 指定显示的动画xml -->
+        <item name="android:windowEnterAnimation">@anim/anim_popupwindow_show</item>
+        <!-- 指定消失的动画xml -->
+        <item name="android:windowExitAnimation">@anim/anim_popupwindow_hide</item>
+    </style>
+    <!-- popuActivity-->
+    <style name="cricleBottomAnimation">
+        <item name="android:windowEnterAnimation">@anim/avatar_animation_right_in</item>
+        <item name="android:windowExitAnimation">@anim/avatar_animation_right_out</item>
+    </style>
+    <!-- layout.activity_myprogress-->
+    <style name="MyProgressBarHorizontal" parent="@android:style/Widget.ProgressBar.Horizontal" >
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:progressDrawable">@drawable/my_progress_horizontal</item>
+        <item name="android:indeterminateDrawable">@android:drawable/progress_indeterminate_horizontal</item>
+        <item name="android:minHeight">20dip</item>
+        <item name="android:maxHeight">20dip</item>
+    </style>
+    <!-- com.app.alldemo.courview.switchbuton.SwitchButton-->
+    <style name="SwitchButtonStyle">
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">4dp</item>
+    </style>
+    <style name="SwitchButtonStyleMD" parent="SwitchbuttonMD">
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">4dp</item>
+    </style>
+    <style name="SwitchbuttonMD">
+        <item name="kswThumbDrawable">@drawable/ksw_md_thumb</item>
+        <item name="kswBackColor">@color/ksw_md_back_color</item>
+        <item name="kswBackMeasureRatio">1.45</item>
+        <item name="kswThumbMarginLeft">-16dp</item>
+        <item name="kswThumbMarginTop">-14dp</item>
+        <item name="kswThumbMarginRight">-16dp</item>
+        <item name="kswThumbMarginBottom">-14dp</item>
+    </style>
+    <!-- com.app.alldemo.courview.getAroundDialog()-->
+    <style name="loading_dialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@drawable/shape_nodeal_progressdialog</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    <!-- com.app.alldemo.courview.wheel.CalBaseDialog-->
+    <style name="Calendar_Control_dialog" parent="android:Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+    <!-- com.app.alldemo.courview.wheel.DialogGradleView-->
+    <style name="dialogWindowAnim" mce_bogus="1" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/dialog_enter_anim</item>
+        <item name="android:windowExitAnimation">@anim/dialog_exit_anim</item>
+    </style>
+</resources>

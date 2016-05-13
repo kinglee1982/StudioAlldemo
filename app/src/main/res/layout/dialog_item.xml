@@ -1,0 +1,68 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="${relativePackage}.${activityClass}" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:text="パラメータを入力してください"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="PID"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/edtPID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="パートナーIDを入力してください"
+            android:inputType="phone" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="MID"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/edtMID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="メディアIDを入力してください"
+            android:inputType="phone" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="SID"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/edtSID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="スポットIDを入力してください"
+            android:inputType="phone" />
+
+    </LinearLayout>
+
+</RelativeLayout>

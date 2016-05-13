@@ -1,0 +1,20 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <!-- com.app.alldemo.courview.ViewTest自定义view的说明-->
+    <!-- 一些矩形等的绘制-->
+    <com.app.alldemo.courview.DrawTest
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        />
+    <!-- 一个例子-->
+    <com.app.alldemo.courview.CaloriesGraph
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        />
+</LinearLayout>

@@ -1,0 +1,100 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/rl_search_box"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="-1.5dp"
+        android:background="@drawable/c1_mp_lable" >
+
+        <LinearLayout
+            android:id="@+id/ll_search_one"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/search_et_bg"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="visible" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/mp_icon_search02" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:hint="搜索" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/ll_search_two"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:visibility="gone" >
+
+            <TextView
+                android:id="@+id/btn_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="cancel"
+                android:textColor="#ffffff" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginLeft="5dp"
+                android:layout_toLeftOf="@+id/btn_cancel"
+                android:background="@drawable/write_solid_grey_arc" >
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/mp_icon_search02"
+                    android:scaleType="center" />
+
+                <ImageView
+                    android:id="@+id/search_clear_inco"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/delete_edit"
+                    android:scaleType="center"
+                    android:visibility="gone" />
+
+                <EditText
+                    android:id="@+id/et_search"
+                    style="@style/nostyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toLeftOf="@+id/search_clear_inco"
+                    android:hint="搜索"
+                    android:imeOptions="actionSearch"
+                    android:inputType="text"
+                    android:paddingLeft="10dp" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</LinearLayout>
