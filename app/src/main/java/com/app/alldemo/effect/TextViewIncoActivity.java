@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Html;
+import android.text.Layout;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
@@ -24,6 +25,7 @@ import android.text.style.TypefaceSpan;
 import android.text.style.URLSpan;
 import android.text.style.UnderlineSpan;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -34,18 +36,89 @@ import com.app.alldemo.utils.ViewUtils;
 public class TextViewIncoActivity extends Activity {
     private static final String TAG = "TextViewIncoActivity";
     private TextView spannable_text;
-    private TextView text_click;
+    private TextView text_click,text_test;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_text_inco);
         spannable_text = (TextView) findViewById(R.id.spannable_text);
         text_click = (TextView) findViewById(R.id.text_click);
+        text_test = (TextView) findViewById(R.id.text_test);
+        textUrl();
         findUI();
         textClick();
         textStyle();
     }
+    private void textUrl(){
+        String urlString="我们去百度 www.baidu.com 看看图片";
+        text_test.setText(urlString);
+        SpannableString spannableString = new SpannableString(text_test.getText());
+        spannableString.setSpan(new textLong("百度"), 3, 5, Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
+        text_test.setText(spannableString);
+//        text_test.setMovementMethod(LinkMovementMethod.getInstance());
+        text_test.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                Log.e(TAG,"触摸");
+                boolean ret = false;
+                CharSequence text = ((TextView) v).getText();
+                Spannable sText = Spannable.Factory.getInstance().newSpannable(text);
+                TextView widget = (TextView) v;
+                int action = event.getAction();
 
+                if (action == MotionEvent.ACTION_UP || action == MotionEvent.ACTION_DOWN) {
+                    int x = (int) event.getX();
+                    int y = (int) event.getY();
+
+                    x -= widget.getTotalPaddingLeft();
+                    y -= widget.getTotalPaddingTop();
+
+                    x += widget.getScrollX();
+                    y += widget.getScrollY();
+
+                    Layout layout = widget.getLayout();
+                    int line = layout.getLineForVertical(y);
+                    int off = layout.getOffsetForHorizontal(line, x);
+
+                    ClickableSpan[] link = sText.getSpans(off, off, ClickableSpan.class);
+
+                    if (link.length != 0) {
+                        if (action == MotionEvent.ACTION_UP) {
+                            link[0].onClick(widget);
+                        }
+                        ret = true;
+                    }
+                }
+                return ret;
+            }
+        });
+    }
+    private class textLong implements View.OnLongClickListener {
+        private String clickString;
+        public textLong(String clickString){
+            this.clickString=clickString;
+        }
+        @Override
+        public boolean onLongClick(View v) {
+            Log.e(TAG,"长DD按");
+            ViewUtils.getInstance().copy("内容",TextViewIncoActivity.this);
+            return false;
+        }
+    }
+    private class TextViewURLSpan2 extends ClickableSpan {
+        private String clickString;
+        public TextViewURLSpan2(String clickString){
+            this.clickString=clickString;
+        }
+        @Override
+        public void updateDrawState(TextPaint ds) {
+        }
+
+        @Override
+        public void onClick(View widget) {
+            Log.e(TAG,"onClick:");
+        }
+    }
     private void findUI() {
         TextView textView = (TextView) this.findViewById(R.id.textview);
         TextView textview2 = (TextView) this.findViewById(R.id.textview2);
