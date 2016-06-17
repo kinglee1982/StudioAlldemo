@@ -5,4 +5,7 @@
         <attr name="xmlns_name" format="string" />
         <attr name="xmlns_boolean" format="boolean" />
     </declare-styleable>
+    <declare-styleable name="XmlnsTextAttrs">
+        <attr name="xml_size" format="float" />
+    </declare-styleable>
 </resources>

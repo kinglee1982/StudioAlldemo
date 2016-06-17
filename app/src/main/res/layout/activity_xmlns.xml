@@ -6,8 +6,20 @@
     >
     <com.app.alldemo.courview.XmlnsView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         dslvd:xmlns_name="测试自定义属性"
         dslvd:xmlns_boolean="true"
+        />
+    <com.app.alldemo.courview.XmlTextView
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:text="我们"
+        dslvd:xml_size="16"
+        />
+    <com.app.alldemo.courview.XmlTextView
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:text="我他们"
+        dslvd:xml_size="36"
         />
 </LinearLayout>
