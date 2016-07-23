@@ -40,11 +40,11 @@ public class RefreshActivity extends Activity implements
             videoDetailBean.setmContent("我们"+1);
             videoDetailBeans.add(videoDetailBean);
         }
-//        listview.setEmptyView(nodata);
+        listview.setEmptyView(nodata);
         adapter=new SearchVideosAdapter(this, videoDetailBeans);
-        heardView();
+//        heardView();
         listview.setAdapter(adapter);
-        nodata();
+//        nodata();
     }
     private void nodata(){
         if(videoDetailBeans.size()>0){
@@ -69,7 +69,7 @@ public class RefreshActivity extends Activity implements
                 videoDetailBeans.clear();
                 adapter.setDatas(videoDetailBeans);
                 adapter.notifyDataSetChanged();
-                nodata();
+//                nodata();
             }
         }, 200);
     }

@@ -27,6 +27,7 @@ import android.text.style.UnderlineSpan;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewConfiguration;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,7 +37,8 @@ import com.app.alldemo.utils.ViewUtils;
 public class TextViewIncoActivity extends Activity {
     private static final String TAG = "TextViewIncoActivity";
     private TextView spannable_text;
-    private TextView text_click,text_test;
+    private TextView text_click, text_test;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,24 +51,65 @@ public class TextViewIncoActivity extends Activity {
         textClick();
         textStyle();
     }
-    private void textUrl(){
-        String urlString="我们去百度 www.baidu.com 看看图片";
+
+    private String tag = "";
+    private long downMillis, moveMillis, upMillis;
+
+    private void textUrl() {
+        String urlString = "我们去百度 www.baidu.com 看看图片 http://www.yidianzixun.com/076bEqSR  有一个网址";
         text_test.setText(urlString);
         SpannableString spannableString = new SpannableString(text_test.getText());
-        spannableString.setSpan(new textLong("百度"), 3, 5, Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
+        spannableString.setSpan(new TextViewURLSpan3("百度"), 3, 5, Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
+        spannableString.setSpan(new TextViewURLSpan4("www.baidu.com"), 6, 20, Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
         text_test.setText(spannableString);
 //        text_test.setMovementMethod(LinkMovementMethod.getInstance());
         text_test.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                Log.e(TAG,"触摸");
                 boolean ret = false;
                 CharSequence text = ((TextView) v).getText();
                 Spannable sText = Spannable.Factory.getInstance().newSpannable(text);
                 TextView widget = (TextView) v;
                 int action = event.getAction();
+                if (action == MotionEvent.ACTION_DOWN) {
+                    downMillis = System.currentTimeMillis();
+                    tag = "click";
+                }
+                if (action == MotionEvent.ACTION_MOVE) {
+                    moveMillis = System.currentTimeMillis();
+                    if ((moveMillis - downMillis) > ViewConfiguration.getLongPressTimeout()) {
+                        //长按事件
+                        tag = "longClick";
+                        Log.e(TAG, "ACTION_MOVE:" + tag);
+                        int x = (int) event.getX();
+                        int y = (int) event.getY();
 
-                if (action == MotionEvent.ACTION_UP || action == MotionEvent.ACTION_DOWN) {
+                        x -= widget.getTotalPaddingLeft();
+                        y -= widget.getTotalPaddingTop();
+
+                        x += widget.getScrollX();
+                        y += widget.getScrollY();
+
+                        Layout layout = widget.getLayout();
+                        int line = layout.getLineForVertical(y);
+                        int off = layout.getOffsetForHorizontal(line, x);
+                        ClickableSpan[] link = sText.getSpans(off, off, ClickableSpan.class);
+                        if (link.length != 0) {
+                            if (action == MotionEvent.ACTION_UP) {
+                                link[0].onClick(widget);
+                            }
+                            ret = true;
+                        }
+                    }
+                }
+                if (action == MotionEvent.ACTION_UP) {
+                    Log.e(TAG, "ACTION_UP:" + tag);
+                    upMillis = System.currentTimeMillis();
+                    if ((upMillis - downMillis) > ViewConfiguration.getLongPressTimeout()) {
+                        tag = "longClick";
+                    } else {
+                        tag = "click";
+                    }
                     int x = (int) event.getX();
                     int y = (int) event.getY();
 
@@ -79,9 +122,7 @@ public class TextViewIncoActivity extends Activity {
                     Layout layout = widget.getLayout();
                     int line = layout.getLineForVertical(y);
                     int off = layout.getOffsetForHorizontal(line, x);
-
                     ClickableSpan[] link = sText.getSpans(off, off, ClickableSpan.class);
-
                     if (link.length != 0) {
                         if (action == MotionEvent.ACTION_UP) {
                             link[0].onClick(widget);
@@ -93,32 +134,81 @@ public class TextViewIncoActivity extends Activity {
             }
         });
     }
-    private class textLong implements View.OnLongClickListener {
+
+    private class TextViewURLSpan3 extends ClickableSpan {
         private String clickString;
-        public textLong(String clickString){
-            this.clickString=clickString;
+
+        public TextViewURLSpan3(String clickString) {
+            this.clickString = clickString;
         }
-        @Override
-        public boolean onLongClick(View v) {
-            Log.e(TAG,"长DD按");
-            ViewUtils.getInstance().copy("内容",TextViewIncoActivity.this);
-            return false;
-        }
-    }
-    private class TextViewURLSpan2 extends ClickableSpan {
-        private String clickString;
-        public TextViewURLSpan2(String clickString){
-            this.clickString=clickString;
-        }
+
         @Override
         public void updateDrawState(TextPaint ds) {
         }
 
         @Override
         public void onClick(View widget) {
-            Log.e(TAG,"onClick:");
+            if ("longClick".equals(tag)) {
+                Log.e(TAG, "TextViewURLSpan3-长按clickString:" + clickString);
+            } else {
+                Log.e(TAG, "TextViewURLSpan3-点击clickString:" + clickString);
+            }
         }
     }
+
+    private class TextViewURLSpan4 extends ClickableSpan {
+        private String clickString;
+
+        public TextViewURLSpan4(String clickString) {
+            this.clickString = clickString;
+        }
+
+        @Override
+        public void updateDrawState(TextPaint ds) {
+        }
+
+        @Override
+        public void onClick(View widget) {
+            if ("longClick".equals(tag)) {
+                Log.e(TAG, "TextViewURLSpan4-长按clickString:" + clickString);
+            } else {
+                Log.e(TAG, "TextViewURLSpan4-点击clickString:" + clickString);
+            }
+        }
+    }
+
+    private class textLong implements View.OnLongClickListener {
+        private String clickString;
+
+        public textLong(String clickString) {
+            this.clickString = clickString;
+        }
+
+        @Override
+        public boolean onLongClick(View v) {
+            Log.e(TAG, "长DD按");
+            ViewUtils.getInstance().copy("内容", TextViewIncoActivity.this);
+            return false;
+        }
+    }
+
+    private class TextViewURLSpan2 extends ClickableSpan {
+        private String clickString;
+
+        public TextViewURLSpan2(String clickString) {
+            this.clickString = clickString;
+        }
+
+        @Override
+        public void updateDrawState(TextPaint ds) {
+        }
+
+        @Override
+        public void onClick(View widget) {
+            Log.e(TAG, "onClick:");
+        }
+    }
+
     private void findUI() {
         TextView textView = (TextView) this.findViewById(R.id.textview);
         TextView textview2 = (TextView) this.findViewById(R.id.textview2);
@@ -143,21 +233,23 @@ public class TextViewIncoActivity extends Activity {
                 + "</body></html>";
         ViewUtils.getInstance().viewHTmlText(this, textView, html);
     }
-    private void textClick(){
+
+    private void textClick() {
 //        CharSequence str=getText(R.string.textclick);
         text_click.setText(Html.fromHtml("sddddddddddfgffdssss"));
         SpannableString spannableString1 = new SpannableString(text_click.getText());
-        spannableString1.setSpan(new TextViewURLSpan(text_click.getText().toString().substring(text_click.getText().length() - 3,text_click.getText().length())), text_click.getText().length() - 3, text_click.getText().length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        spannableString1.setSpan(new TextViewURLSpan(text_click.getText().toString().substring(text_click.getText().length() - 3, text_click.getText().length())), text_click.getText().length() - 3, text_click.getText().length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         spannableString1.setSpan(new ForegroundColorSpan(Color.RED), text_click.getText().length() - 3, text_click.getText().length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         text_click.setText(spannableString1);
         text_click.setMovementMethod(LinkMovementMethod.getInstance());
     }
-    private void textClick2(){
+
+    private void textClick2() {
 //        text_click.setText(Html.fromHtml(actionText));
         StringBuilder actionText = new StringBuilder();
         actionText.append("<a style=\"text-decoration:none;\" href='username'>"
                 + "username:" + " </a>");
-        String textString="我摸<font  color=\"#4A90E2\">#password </font>他家";
+        String textString = "我摸<font  color=\"#4A90E2\">#password </font>他家";
         actionText.append(textString);
         actionText.append("隐形人"
                 + "<a style=\"color:blue;text-decoration:none;\" href='singstar'> "
@@ -173,13 +265,14 @@ public class TextViewIncoActivity extends Activity {
         SpannableStringBuilder stylesBuilder = new SpannableStringBuilder(text);
         stylesBuilder.clearSpans(); // should clear old spans
         for (URLSpan url : urlspan) {
-            Log.e("","内容:"+url.getURL());
+            Log.e("", "内容:" + url.getURL());
             TextViewURLSpan myURLSpan = new TextViewURLSpan(url.getURL());
             stylesBuilder.setSpan(myURLSpan, spannable.getSpanStart(url),
                     spannable.getSpanEnd(url), spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         }
         text_click.setText(stylesBuilder);
     }
+
     private class TextViewURLSpan extends ClickableSpan {
         private String clickString;
 
@@ -195,24 +288,23 @@ public class TextViewIncoActivity extends Activity {
 
         @Override
         public void onClick(View widget) {
-            Log.e("","点击:"+clickString);
+            Log.e("", "点击:" + clickString);
             if (clickString.equals("颜色2")) {
                 Toast.makeText(getApplication(), clickString, Toast.LENGTH_LONG)
                         .show();
             } else if (clickString.equals("singstar")) {
                 Toast.makeText(getApplication(), clickString, Toast.LENGTH_LONG)
                         .show();
-            }
-             else if (clickString.equals("username")) {
+            } else if (clickString.equals("username")) {
                 Toast.makeText(getApplication(), clickString, Toast.LENGTH_LONG)
                         .show();
-            }
-             else if (clickString.equals("women")) {
+            } else if (clickString.equals("women")) {
                 Toast.makeText(getApplication(), clickString, Toast.LENGTH_LONG)
                         .show();
             }
         }
     }
+
     /**
      * 对textview每个样式的设置
      */

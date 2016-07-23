@@ -31,6 +31,17 @@ public class RegexUtils {
     private String regEx4 = "\\d";
     // 纯数字
     private String regEx5 = "[0-9]*";
+    //网址
+    public static final String check2 = "((http|ftp|https)://)(([a-zA-Z0-9\\._-]+\\.[a-zA-Z]{2,6})|([0-9]{1,3}\\.){4})(:[0-9]{1,4})*(/[a-zA-Z0-9\\&%_\\./-~-]*)?";//http://www.baidu.com
+    public static final String check = "([a-zA-Z0-9\\._-]+\\.)(([a-zA-Z]{2,6})|([0-9]{1,3}\\.){4})(:[0-9]{1,4})*(/[a-zA-Z0-9\\&%_\\./-~-]*)?";//www.baidu.com
+
+    public static final String test4 = "(((http|ftp|https)://)(([a-zA-Z0-9\\._-]+\\.[a-zA-Z]{2,6})|([0-9]{1,3}\\.){4})(:[0-9]{1,4})*(/[a-zA-Z0-9\\&%_\\./-~-]*)?)|(([a-zA-Z0-9\\._-]+\\.)(([a-zA-Z]{2,6})|([0-9]{1,3}\\.){4})(:[0-9]{1,4})*(/[a-zA-Z0-9\\&%_\\./-~-]*)?)";//baidu.com
+    //电话号码
+    String telRegex = "^(\\d{3,4}-)?\\d{6,8}$";
+    //验证输入密码条件(字符与数据同时出现)
+    String pasRegex = "[A-Za-z]+[0-9]";
+    //验证输入密码长度 (6-18位)
+    String pasLenghregex = "^\\d{6,18}$";
     /**
      * 获取正则
      */

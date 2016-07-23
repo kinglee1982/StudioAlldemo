@@ -26,14 +26,18 @@
                     android:dashGap="5dp"
                 />
             <!-- 渐变 -->
-            <!-- 渐变的样式 liner线性渐变 radial环形渐变 sweep-->
+            <!-- 渐变的样式 liner线性渐变 radial环形渐变 sweep
+            angle:必须为45的整数倍;gradientRadius:径向渐变需要指定半径
+            angle:默认是0;线性即从startColor-end;180;反过来;end-start
+            -->
             <gradient
-                android:angle="270"
+                android:angle="0"
                 android:centerColor="#FFFFFF"
                 android:centerY="0.75"
                 android:endColor="#FFFFFF"
                 android:startColor="#FFFFFF"
                 android:type="sweep"
+                android:gradientRadius="0"
                 />
         </shape>
     </item>

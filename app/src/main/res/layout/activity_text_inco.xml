@@ -12,7 +12,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-            <!--android:textIsSelectable="true"复制所有-->
+            <!--android:textIsSelectable="true"复制所有;android:autoLink="email|phone|web"-->
             <TextView
                 android:id="@+id/text_test"
                 android:layout_width="fill_parent"

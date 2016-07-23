@@ -44,7 +44,7 @@ public class DrawTest extends View {
 	@Override
 	protected void onDraw(Canvas canvas) {
 		super.onDraw(canvas);
-		xu(canvas);
+		acrTo(canvas);
 	}
 	private void xu(Canvas canvas){
 		// 虚线的绘制
@@ -59,6 +59,10 @@ public class DrawTest extends View {
 				5 * 2, 5 * 2 }, 5 * 2);
 		bak_x_line.setPathEffect(cal_effects);
 		canvas.drawPath(bak_x_path, bak_x_line);
+		Path bak_x_path2 = new Path();
+		bak_x_path2.moveTo(20, 20);
+		bak_x_path2.lineTo(20 + 300, 20);
+		canvas.drawPath(bak_x_path2, bak_x_line);
 	}
 	/**
 	 * 虚线
@@ -94,7 +98,7 @@ public class DrawTest extends View {
 		}
 		// 绘制连线
 		mCircle.setStrokeWidth(2.0F * density);
-		for (int i = 0; i < 2; i++) {
+		for (int i = 0; i < points.size()-1; i++) {
 			canvas.drawLine(points.get(i).x, points.get(i).y,
 					points.get(i + 1).x, points.get(i + 1).y, mCircle);
 		}
@@ -235,8 +239,24 @@ public class DrawTest extends View {
 	 */
 	private void irregular(Canvas canvas) {
 		Path p = new Path();
-		p.moveTo(100, 500);// 移动画笔
+		p.moveTo(40, 100);// 移动画笔
+		p.lineTo(100,100);
 		p.quadTo(200, 100, 300, 500);// 第一个控制点,第二个控制点
+//		RectF oval = new RectF(200, 200, 100, 100);
+//		p.arcTo(oval, 90, 180);//true:不连接,false:连接:默认值
+		Paint paint = new Paint();
+		paint.setColor(Color.RED);
+		paint.setStrokeWidth(1);
+		paint.setStyle(Style.STROKE);
+		canvas.drawPath(p, paint);
+	}
+
+	private void acrTo(Canvas canvas){
+		Path p = new Path();
+//		p.moveTo(40, 100);// 移动画笔
+		RectF oval = new RectF(100, 100, 200, 200);
+		p.arcTo(oval, 180, -90);//true:不连接,false:连接:默认值
+
 		Paint paint = new Paint();
 		paint.setColor(Color.RED);
 		paint.setStrokeWidth(1);

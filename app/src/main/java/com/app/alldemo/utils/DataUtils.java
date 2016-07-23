@@ -27,6 +27,10 @@ import java.util.Locale;
  * 通过日期获取年月日
  * 计算两日期之间的距离
  * long型转换为日期格式
+ * 两个日期之间的月份
+ * 某个日期月份的天数
+ * 某个日期最大的年天数
+ * 此日期在此年的位置
  */
 public class DataUtils {
 	private static DataUtils instance;
@@ -349,4 +353,99 @@ public class DataUtils {
         Date date=new Date(System.currentTimeMillis());
         return new SimpleDateFormat(format).format(date);
     }
+	/**
+	 * 两个日期之间的月份
+	 * @param date1
+	 * @param date2
+	 * @return 格式到月不能到天 yyyyMM
+	 */
+	private static int getMonths(Date date1, Date date2) {
+		int iMonth = 0;
+		int flag = 0;
+		try {
+			Calendar objCalendarDate1 = Calendar.getInstance();
+			objCalendarDate1.setTime(date1);
+
+			Calendar objCalendarDate2 = Calendar.getInstance();
+			objCalendarDate2.setTime(date2);
+
+			if (objCalendarDate2.equals(objCalendarDate1)){
+				return 0;
+			}
+			//赋值objCalendarDate2大
+			if (objCalendarDate1.after(objCalendarDate2)) {
+				Calendar temp = objCalendarDate1;
+				objCalendarDate1 = objCalendarDate2;
+				objCalendarDate2 = temp;
+			}
+			if (objCalendarDate2.get(Calendar.DAY_OF_MONTH) < objCalendarDate1.get(Calendar.DAY_OF_MONTH)){
+				flag = 1;
+			}
+			if (objCalendarDate2.get(Calendar.YEAR) > objCalendarDate1.get(Calendar.YEAR)){
+				iMonth = ((objCalendarDate2.get(Calendar.YEAR) - objCalendarDate1.get(Calendar.YEAR))
+						* 12 + objCalendarDate2.get(Calendar.MONTH) - flag)
+						- objCalendarDate1.get(Calendar.MONTH);
+			}else{
+				iMonth = objCalendarDate2.get(Calendar.MONTH)
+						- objCalendarDate1.get(Calendar.MONTH) - flag;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return iMonth;
+	}
+	/**
+	 * 某个日期月份的天数
+	 * @param dayInt
+	 */
+	public void getMaxDays(int dayInt){
+		try {
+			SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd");
+			Date dayDate = formatter.parse(String.valueOf(dayInt));
+			Calendar calendar = Calendar.getInstance();
+			calendar.setTime(dayDate);
+			int maxDay = calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
+			System.out.println("Max Day: " + maxDay);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+	}
+	/**
+	 * 某个日期最大的年天数
+	 * @return
+	 */
+	public int getMaxYearDays(int year){
+		if((year%4==0 && year%100!=0) || year%400==0){
+			return 366;
+		}else{
+			return 365;
+		}
+	}
+
+	/**
+	 * 此日期在此年的位置
+	 * @return
+	 */
+	public int getYearPosition(int year,int month,int day){
+		int secondDays=28;
+		if((year%4==0 && year%100!=0) || year%400==0){
+			secondDays=29;
+		}
+		switch(month-1)
+		{
+			case 12:day += 31;
+			case 11:day += 30;
+			case 10:day += 31;
+			case 9:day += 30;
+			case 8:day += 31;
+			case 7:day += 31;
+			case 6:day += 30;
+			case 5:day += 31;
+			case 4:day += 30;
+			case 3:day += 31;
+			case 2:day += secondDays;
+			case 1:day += 31;
+		}
+		return day;
+	}
 }
