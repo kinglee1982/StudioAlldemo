@@ -74,6 +74,8 @@ import java.util.Random;
  * bitmap存图片
  * Bitmap缩放
  * 判断sd卡中的图片是否被旋转
+ * 读取本地媒体库
+ * 获取所有图片的照片
  */
 public class UtilsTool {
     private static final String TAG = "UtilsTool";
@@ -328,6 +330,39 @@ public class UtilsTool {
                         .getColumnIndexOrThrow(MediaStore.Audio.Media.SIZE));
             }
         }
+    }
+    /**
+     * 获取所有图片的照片
+     *
+     * @param context
+     * @return
+     */
+    public ArrayList<String> getAllImages(Context context) {
+        ArrayList<String> dataList = new ArrayList<String>();
+        Cursor cursor = null;
+        cursor = context.getContentResolver().
+                query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+                        new String[]{
+                                MediaStore.Images.Media._ID,      //id
+                                MediaStore.Images.Media.DATA,     //路径
+                                MediaStore.Images.Media.DISPLAY_NAME,//文件名
+                        },
+                        null, null, null);
+        if (cursor == null) {
+            return dataList;
+        }
+        if (cursor.getCount() == 0) {
+            cursor.close();
+            return dataList;
+        }
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+            String path = cursor.getString(cursor.getColumnIndex(MediaStore.Images.Media.DATA));
+            dataList.add(path);
+            cursor.moveToNext();
+        }
+        Collections.reverse(dataList);
+        return dataList;
     }
 
     /**
